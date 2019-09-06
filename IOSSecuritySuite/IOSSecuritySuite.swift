@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class IOSSecuritySuite {
+public class IOSSecuritySuite: NSObject {
     
     /**
      This type method is used to determine the true/false jailbreak status
@@ -18,7 +18,7 @@ public class IOSSecuritySuite {
      let isDeviceJailbroken = IOSSecuritySuite.amIJailbroken() ? true : false
      ```
      */
-    public static func amIJailbroken() -> Bool {
+    @objc public static func amIJailbroken() -> Bool {
         return JailbreakChecker.amIJailbroken()
     }
     
@@ -51,7 +51,7 @@ public class IOSSecuritySuite {
      let runInEmulator = IOSSecuritySuite.amIRunInEmulator() ? true : false
      ```
      */
-    public static func amIRunInEmulator() -> Bool {
+    @objc public static func amIRunInEmulator() -> Bool {
         return EmulatorChecker.amIRunInEmulator()
     }
     
@@ -63,7 +63,7 @@ public class IOSSecuritySuite {
      let amIDebugged = IOSSecuritySuite.amIDebugged() ? true : false
      ```
      */
-    public static func amIDebugged() -> Bool {
+    @objc public static func amIDebugged() -> Bool {
         return DebuggerChecker.amIDebugged()
     }
     
@@ -75,7 +75,7 @@ public class IOSSecuritySuite {
      IOSSecuritySuite.denyDebugger()
      ```
      */
-    public static func denyDebugger() {
+    @objc public static func denyDebugger() {
         return DebuggerChecker.denyDebugger()
     }
     
@@ -87,7 +87,7 @@ public class IOSSecuritySuite {
      let amIReverseEngineered = IOSSecuritySuite.amIReverseEngineered() ? true : false
      ```
      */
-    public static func amIReverseEngineered() -> Bool {
+    @objc public static func amIReverseEngineered() -> Bool {
         return ReverseEngineeringToolsChecker.amIReverseEngineered()
     }
     
